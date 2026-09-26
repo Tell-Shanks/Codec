@@ -29,11 +29,11 @@ jobs:
       - name: Test
         run: dotnet test --configuration Release --no-build
 
-      - name: Publish (win-x64)
-        run: dotnet publish -c Release -r win-x64 --output publish/win-x64
+      - name: Publish Avalonia (win-x64)
+        run: dotnet publish Codec.UI.Avalonia/Codec.UI.Avalonia.csproj -c Release -r win-x64 --output publish/avalonia
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Codec-win-x64
-          path: publish/win-x64
+          name: Codec-Avalonia-win-x64
+          path: publish/avalonia
